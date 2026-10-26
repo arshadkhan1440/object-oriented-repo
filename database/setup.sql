@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS food_ordering;
+USE food_ordering;
+
+CREATE TABLE IF NOT EXISTS customer_accounts (
+    account_id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(120) NOT NULL,
+    email VARCHAR(254) NOT NULL UNIQUE,
+    password_salt VARCHAR(64) NOT NULL,
+    password_hash VARCHAR(64) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
